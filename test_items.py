@@ -8,7 +8,7 @@ links = ["http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/",
 
 
 @pytest.mark.parametrize('link', links)
-def test_basket_button(browser, link):
+def test_check_basket_button_exists(browser, link):
     browser.get(link)
     buttons = len(browser.find_elements_by_xpath('// *[ @ id = "add_to_basket_form"] / button'))
     assert buttons > 0, "NOT FOUND"
